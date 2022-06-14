@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+    <style>
+        * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Four equal columns */
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+
+
+/* If a screen is 1200px or less wide, keep two columns */
+@media screen and (max-width: 1200px) {
+    .column {
+        flex:25%;
+        max-width: 25%;
+        border: 2px solid green;
+        
+    }
+}
+
+/* If a screen is 800px or less wide, keep two columns */
+@media screen and (max-width: 800px) {
+    .column {
+        flex:50%;
+        max-width: 50%;
+        border: 2px solid red;
+        
+    }
+}
+
+/* If a screen is 600px or less wide, stack the columns on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+        border: 8px dashed blue;
+        background-color: red;
+    }
+}
+
+    </style>
+
+</head>
+<body>
+    <div class="row">
+        <div class="column">
+            <img src="https://picsum.photos/250/250/?random">
+            <img src="https://picsum.photos/255/255/?random">
+            <img src="https://picsum.photos/260/260/?random">
+            <img src="https://picsum.photos/265/265/?random">
+            <img src="https://picsum.photos/270/270/?random">
+            <img src="https://picsum.photos/275/275/?random">
+        </div>
+        <div class="column">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/205/205/?random">
+            <img src="https://picsum.photos/210/210/?random">
+            <img src="https://picsum.photos/215/215/?random">
+            <img src="https://picsum.photos/220/220/?random">
+            <img src="https://picsum.photos/225/225/?random">
+        </div>
+        <div class="column">
+            <img src="https://picsum.photos/270/270/?random">
+            <img src="https://picsum.photos/275/275/?random">
+            <img src="https://picsum.photos/280/280/?random">
+            <img src="https://picsum.photos/285/285/?random">
+            <img src="https://picsum.photos/290/290/?random">
+            <img src="https://picsum.photos/295/295/?random">
+        </div>
+        <div class="column">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/205/205/?random">
+            <img src="https://picsum.photos/210/210/?random">
+            <img src="https://picsum.photos/215/215/?random">
+            <img src="https://picsum.photos/220/220/?random">
+            <img src="https://picsum.photos/225/225/?random">
+        </div>
+    </div>
+</body>
+</html>
