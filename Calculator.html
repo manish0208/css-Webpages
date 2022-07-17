@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+       /* body {
+            justify-content: center;
+            align-items: center;
+            width: 50vh;
+            height: 50vh;
+        }   */
+        #inp {
+            width: 100px;
+            border: 1px solid blue;
+            box-shadow: 1px 1px;
+            border-radius: 5px;
+            margin-bottom: 2px;
+            
+        } 
+
+        #btn { 
+            align-items:center;
+            bottom:0;
+            font-family:sans-serif;
+            justify-content:center;
+            left:0;
+            padding:20vw;
+            position:absolute;
+            right:0;
+            text-align:center;
+            top:15px;
+        }
+        #mul:hover {
+            border-radius: 100%;
+            background-color: orange;
+        }
+        #div:hover{
+            border-radius: 100%;
+            background-color: lightslategray;
+        }
+        #sub:hover {
+            border-radius: 100%;
+            background-color: lightsalmon;
+        }
+        #cancel:hover {
+            border-radius: 100%;
+            background-color: lightseagreen;
+        }
+        #plus:hover {
+            border-radius: 100%;
+            background-color: lightblue;
+        }
+        #equal:hover {
+            border-radius: 100%;
+            background-color: lightgreen;
+        }
+        
+        
+    </style>
+
+</head>
+<body>
+    <!--Write a JavaScript program to get the width and height of the window-->
+
+  <!--  <div>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, ex? <button onclick="alert('hello')">click me</button></p>
+    
+
+        <div id="GTA">
+
+        </div>
+        
+    </div>-->
+        <h1>Calculator</h1>
+        
+            
+        
+        <div id="btn" onclick="button()">
+            <label for="inp"></label>
+            <input id="inp" type="text"><br>
+            <button id="bttn" onclick="display(1)">1</button>
+            <button id="bttn" onclick="display(2)">2</button>
+            <button id="bttn" onclick="display(3)">3</button>
+            <button id="mul"  onclick="display('*')">*</button><br>
+            <button id="bttn" onclick="display(4)">4</button>
+            <button id="bttn" onclick="display(5)">5</button>
+            <button id="bttn" onclick="display(6)">6</button>
+            <button id="div" onclick="display('/')">/</button><br>
+            <button id="bttn" onclick="display(7)">7</button>
+            <button id="bttn" onclick="display(8)">8</button>
+            <button id="bttn" onclick="display(9)">9</button>
+            <button id="sub" onclick="display('-')">-</button><br>
+            <button id="equal" onclick="solve()">=</button>
+            <button id="bttn" onclick="display(0)"  >0</button>
+            <button id="plus" onclick="display('+')">+</button>
+            <button id="cancel" onclick="cancel()">C</button>
+        </div>
+    
+
+    <script>
+        // function size(){
+        //     var w = window.innerWidth;
+        //     var h = window.innerHeight;
+        //     var dispaly = "Width: " + w + ", " + "Height: " + h;
+        //     document.getElementById('GTA').innerHTML = dispaly;
+        // }
+        // window.addEventListener("resize",size);
+       /* const one = document.getElementById('btn1');
+        const two = document.getElementById('btn2');
+        const three = document.getElementById('btn3');
+        const four = document.getElementById('btn4');
+        const five = document.getElementById('btn5');
+        const six = document.getElementById('btn6');
+        const seven = document.getElementById('btn7');
+        const eight = document.getElementById('btn8');
+        const nine = document.getElementById('btn9');
+
+        const zero = document.getElementById('btn0');
+        const mul = document.getElementById('mul');
+        const div = document.getElementById('div');
+        const sub = document.getElementById('sub');
+        const plus = document.getElementById('plus');
+        const cancel = document.getElementById('cancel');
+        */
+
+        function dispaly(val){
+             document.getElementById('inp').value += val;
+             return val;
+        }
+
+        function solve(){
+            let x = document.getElementById('bttn').value;
+            let y = eval(x);
+            document.getElementById('inp').value = y;
+            return y;
+        }
+        function cancel(){
+            document.getElementById('inp').value = " ";
+        }
+    </script>
+    
+</body>
+</html>

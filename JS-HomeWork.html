@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-HomeWork</title>
+</head>
+<body>
+    <script>
+        //q1. how to reverse a string
+       /*
+        var s = "string";
+        console.log("original string:- "+s);
+        var rev = "";
+        for(var i=s.length-1; i>=0; i--){
+            rev += s[i];
+        }
+        console.log("reversed string:- "+ rev);
+        */
+
+
+
+
+        //q2. how to capitalize first letter of the string  
+        /*
+        const s = "captalize first letter of the string";
+         
+        const sp = s.split(" ");      // .split+ converts string to array of strings
+        for(var i=0; i<sp.length; i++){
+               sp[i] = sp[i].charAt(0).toUpperCase() +sp[i].slice(1);
+            
+        }
+        const first = sp.join(" ");
+        console.log(first);
+        */
+
+
+
+
+         //q3. write a function which take two strings and gives initial letter of those strings.
+         /*
+        function Strings(s1, s2){
+            console.log(s1.slice(0,1));
+            console.log(s2.slice(0,1));
+            
+        }
+         var s = "manish";
+         var t = "veerani";
+         Strings(s,t);
+        */
+
+        
+
+
+
+        //q4. to insert a string within a string at particular position
+        /*
+        var str = prompt("enter the string");
+        console.log("original string:- "+str);
+
+        var addStr = prompt("enter the new string to be added");
+        console.log("string to be added:- "+addStr);
+
+        var index = prompt("enter the index");
+        console.log("index where we want to add new string:- "+index);
+
+        var newStr = str.slice(0,index) + addStr + str.slice(index);   //str.slice(0,index) -> it will add the extracted string from position 0-(index-1) in a new string(newStr)
+        console.log("new string:- "+newStr);                           // addStr            -> it will concat with newStr 
+        */                                                             // str.slice(index)  -> it will add/concat the rest of string after the index with the new string(newStr)
+
+
+
+
+        //q5. remove the first occurance of word in a string.
+        /*
+        var string = prompt("enter the string");
+        console.log("original string:- "+string);
+
+        var s = prompt("enter the word you want to remove");
+        console.log("word to be removed:- "+s);
+
+        var sPosition = string.indexOf(s);    //strating position of that word
+        console.log("index of the word first appeared:- "+sPosition);
+
+        var newStr = string.slice(0,sPosition) + string.slice(sPosition+s.length);
+        console.log("altered string:- "+newStr);
+        */
+        
+
+
+        // to count no. of vowels and consanents in a string
+        /*
+        var string = prompt("enter the string");
+        console.log(string);
+        var v=0;
+        var c=0;
+        for(var i=0; i<string.length; i++){
+            if(string[i]=='a' || string[i]=='e' || string[i]=='i' || string[i]=='o' || string[i]=='u' || string[i]=='A' || string[i]=='E' || string[i]=='I' || string[i]=='O' || string[i]=='U'){
+                v++;
+            }
+            else if(string[i]==' '){
+                continue;
+            }
+            else if(string[i]>0 && string[i]<9){
+                continue;
+            }
+            else if(string[i]=='!' || string[i]=='@' || string[i]=='#' || string[i]=='$' || string[i]=='%' || string[i]=='^' || string[i]=='&' || string[i]=='*' || string[i]=='?'){
+                continue;
+            }
+            else{
+                c++;
+            }
+                
+            }
+        console.log("no. of vowels present: "+v);
+        console.log("no. of consonants present: "+ c);
+            */
+
+
+        //What happens if you use let a second time with the same variable name? What if you use var instead?
+    </script>
+</body>
+</html>

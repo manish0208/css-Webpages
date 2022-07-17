@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> 
+    <title>Love Running</title>
+    <style>
+        header{
+            margin: 0 1rem 2rem 0;
+            border-bottom: 2px solid gray;
+            box-shadow: 2px;
+            width: 100%;
+            position: fixed;
+        }
+        .navbar{
+            line-height: 9px;
+        }
+        ul{
+            list-style: none;
+        }
+        .nav{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            padding: 2px;
+            margin-right: 2rem;
+        }
+        .image{
+           /* background-image: url('running-image.png'); */
+            position: relative;
+            top: 80px;
+            width: 100%;
+            height: 600px;
+        }
+        .overlay{
+            position: absolute;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+            width: 300px;
+            height: 150px;
+            max-width: 200px;
+            background-color: brown;
+            top: 60%;
+            right: 50px;
+            opacity: 0.6;
+            padding: auto;
+
+        }
+        .overlay >h1{
+           /* padding: 1px;*/
+            font-weight: 600;
+        }
+        .overlay >p{
+            
+            color: bisque;
+        }
+        #down{
+            justify-content: center;
+        }
+        .lower{
+            width: 100%;
+        }
+        .left{
+            width: 33%;
+            float: left;
+        }
+        .leftitem{
+            float: right;
+        }
+        .leftitemheading{
+            text-align: center;
+            justify-content: center;
+            border-bottom: 2px solid gray;
+        }
+        .center{
+            width: 33%;
+        }
+        .right{
+            width: 33%;
+            float: right;
+        }
+        .rightitem{
+            float: left;
+
+        }
+        .rightitemheading{
+            text-align: center;
+            justify-content: center;
+            border-bottom: 2px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="head">
+            <nav class="navbar">
+                <h1>LOVE RUNNING</h1>
+                <ul class="nav">
+                    <li><a href="welcome.html">About</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+             </nav>
+        </div>
+    </header>
+    <div class="image">
+       <img src="running-image.png">
+    </div>
+    <div class="overlay">
+        <h1>Love Running</h1>
+        <p>Dublin Docklands & Phoenix Park</p>
+    </div>
+    <section id="down">
+        <div class="text-center">
+            <h2>Why love running with us?</h2>
+        </div>
+        <div class="lower">
+            <div class="left">
+                <div class="leftitem">
+                    <h3 class="leftitemheading">FEEL HEALTHY</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, laudantium.</p>
+                </div>
+                <div class="leftitem">
+                    <h3 class="leftitemheading">FEEL Fresh</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, laudantium.</p>
+                </div>
+            </div>
+            <div class="center">
+               
+            </div>
+            <div class="right">
+                <div class="rightitem">
+                    <h3 class="rightitemheading">STAY HEALTHY</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, laudantium.</p>
+                </div>
+                <div class="rightitem">
+                    <h3 class="rightitemheading">STAY FIT</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, laudantium.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+    <style>
+        .card{
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+        }
+        .main{
+            flex: 0 0 200px;
+            margin: 15px;
+            border: 2px solid black;
+            box-shadow: 3px 4px 5px 0px greenyellow;
+            border-radius: 4px;
+
+        }
+        .main img{
+            max-width: 100%;
+        }
+        .main .text{
+            padding: 0px 25px 30px;
+        }
+        .main .text > button{
+            background-color: aqua;
+            border: 1px solid red;
+            padding: 5px;
+            max-width: 100%;
+        }
+        .best{
+            
+            width: 80px;
+            height: 45px;
+            border: 2px solid blue;
+            align-items:center;
+            transform: rotate(-10deg);
+            background-color: aqua;
+            opacity: 0.5;
+            color:rgb(5, 9, 17);
+            display:flex;
+            flex-wrap:wrap;
+            font-family:sans-serif;
+            padding: 0.125vw;
+            position: absolute;
+    
+        }
+        .best #sell{
+            position: absolute; 
+            text-align: center;
+            top: -25px;
+            left: 0px;
+        }
+        .HW{
+            display: flex;
+            
+            align-items: flex-start;
+            background: #F6F3EB;
+            padding: 1em;
+            border-radius: 5px;
+            max-width: 24em;
+        }
+        .HWmedia{
+            margin-right: 1em;
+        }
+        .mediaBody{
+            flex-flow: 1;
+
+        }
+        .mediaHeading{
+            margin: 0 0 .5em;
+        }
+    </style>
+</head>
+<body>
+    <main class="card">
+    <article class="main">
+        <img src="https://m.media-amazon.com/images/I/619n6kxuGsL._AC_UL480_QL65_.jpg">
+        <div class="text">
+            <h3>OnePlus Nord CE 2 5G</h3>
+            <p>(Gray Mirror, 8GB RAM, 128GB Storage)
+                Price:24,999/-
+            </p>
+            <a href="https://www.amazon.in/OnePlus-Nord-Mirror-128GB-Storage/dp/B09RG132Q5/ref=lp_1389401031_1_5"><button>BUY NOW!</button></a>
+        </div>
+    </article>
+    <article class="main">
+        <img src="https://m.media-amazon.com/images/I/71MaDLgHnxL._AC_UL480_FMwebp_QL65_.jpg">
+        <div class="text">
+            <h3>Samsung Galaxy M53 5G</h3>
+            <p>(Mystique Green, 8GB RAM, 128GB Storage)
+                Price:26,499/-
+            </p>
+            <a href="https://www.amazon.in/dp/B09XJ36Q27/ref=sspa_dk_detail_0?psc=1&pd_rd_i=B09XJ36Q27&pd_rd_w=Dob7g&content-id=amzn1.sym.5210e5d3-37e0-44be-93e0-eb50dad0d2ca&pf_rd_p=5210e5d3-37e0-44be-93e0-eb50dad0d2ca&pf_rd_r=NB8XBEVVJ664R7XRK0EN&pd_rd_wg=oITfn&pd_rd_r=696682f6-6e96-4f1c-9d80-3e04fc75db2b&s=electronics&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExMElGMENVRzJRN1JCJmVuY3J5cHRlZElkPUEwOTU0MTczMjFDQldTSFBDOUgyTCZlbmNyeXB0ZWRBZElkPUEwOTA0Njg0MzNZNzE0N0cyQUk1WSZ3aWRnZXROYW1lPXNwX2RldGFpbCZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU="><button>BUY NOW!</button></a>
+        </div>
+    </article>
+    <article class="main">
+        <img src="https://m.media-amazon.com/images/I/61cpernSJuL._AC_UL480_FMwebp_QL65_.jpg">
+        <div class="text">
+            <h3>Apple iPhone 13 Mini</h3>
+            <p>(Starlight, A15 Bionic chip , 128GB Storage)
+                Price:69,900/-
+            </p>
+            <a href="https://www.amazon.in/Apple-iPhone-Mini-256GB-Starlight/dp/B09G91Q79X/ref=sr_1_42?qid=1654070391&refinements=p_6%3AA14CZOWI0VEHLG%7CA1P3OPO356Q9ZB%7CA2HIN95H5BP4BL%2Cp_89%3AApple&s=electronics&sr=1-42&th=1"><button>BUY NOW!</button></a>
+        </div>
+    </article>
+    <article class="main">
+        <img src="https://m.media-amazon.com/images/I/71WS-0ITj7L._AC_UL480_QL65_.jpg">
+        <div class="text">
+            <h3>iQOO Neo 6 5G</h3>
+            <p>5G(Dark Nova, 8GB RAM, 128GB Storage)
+                Price:29,999/-
+            </p>
+            <a href="https://www.amazon.in/iQOO-Snapdragon%C2%AE-FlashCharge-Exchange-Additional/dp/B07WDKLDRX/ref=lp_1389401031_1_4?th=1"><button>BUY NOW!</button></a>
+        </div>
+    </article>
+    <article class="main">
+        <img src="https://m.media-amazon.com/images/I/81xvGbBFNhL._AC_UL480_FMwebp_QL65_.jpg">
+        <div class="text">
+            <h3>Samsung Galaxy M33 5G</h3>
+            <p>(Deep Ocean Blue, 8GB RAM, 128GB Storage)
+                Price:19,499/-
+            </p>
+            <a href="https://www.amazon.in/Samsung-Storage-Adapter-Purchased-Separately/dp/B09TWH8YHM/ref=pd_rhf_se_s_pd_sbs_rvi_sccl_1_2/260-1087462-5204812?pd_rd_w=IQXjQ&content-id=amzn1.sym.ba3539e7-623c-4dba-9335-f988c030505e&pf_rd_p=ba3539e7-623c-4dba-9335-f988c030505e&pf_rd_r=TCE4MWS6Q574D7NN3NAN&pd_rd_wg=waVuj&pd_rd_r=36d334e2-7fbd-4214-adb1-0ba7c548f532&pd_rd_i=B09TWH8YHM&psc=1"><button>BUY NOW!</button></a>
+        </div>
+    </article>
+    <article class="main">
+        <img src="https://m.media-amazon.com/images/I/71xb2xkN5qL._AC_UL480_FMwebp_QL65_.jpg">
+        <div class="text">
+            <h3>Apple iPhone 13</h3>
+            <p>(Blue, A15 Bionic Chip, 128GB Storage)
+                Price:72,990/-
+            </p>
+            <a href="https://www.amazon.in/Apple-iPhone-13-128GB-Blue/dp/B09G9BL5CP/ref=pd_rhf_se_s_pd_sbs_rvi_sccl_1_3/260-1087462-5204812?pd_rd_w=3Rqd0&content-id=amzn1.sym.ba3539e7-623c-4dba-9335-f988c030505e&pf_rd_p=ba3539e7-623c-4dba-9335-f988c030505e&pf_rd_r=CMS462A1N2VZY4M6CGQF&pd_rd_wg=XkfNu&pd_rd_r=7112b255-5857-43ae-b435-672f4bc4f196&pd_rd_i=B09G9BL5CP&psc=1"><button>BUY NOW!</button></a>
+        </div>
+    </article>
+    <div class="best"><h2 id="sell">Best Seller</h2></div>
+
+    <div class="HW">
+        <img class="HWmedia" src="https://picsum.photos/70/70/?random">
+        <div class="mediaBody">
+        <h2 class="mediaHeading">Organically Synthesized</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum dolorum nulla, inventore suscipit nam deserunt velit iusto iste amet repudiandae hic quidem quia animi vel atque nobis dolorem vero quae modi. Voluptatem deleniti nulla consequuntur quaerat ullam atque, aliquam voluptatibus accusamus assumenda aspernatur dignissimos incidunt tempora nemo perspiciatis recusandae explicabo!</p>
+    </div>
+    </div>
+</main>
+</body>
+<!--
+    <style>
+  .media {
+    display: flex;
+    align-items: flex-start;
+    background: #F6F3EB;
+    padding: 1em;
+    border-radius: 5px;
+    max-width: 24em;
+  }
+  .media-object {
+    margin-right: 1em;
+  }
+  .media-body {
+    flex: 1;
+  }
+  .media-heading {
+    margin: 0 0 .5em;
+  }
+</style>
+<body>
+<div class="media">
+  <img class="media-object" src="/pix/samples/8s.jpg" alt="Sample photo">
+  <div class="media-body">
+    <h3 class="media-heading">Organically Synthesized</h3>
+    <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
+  </div>
+</div>
+</body>
+
+-->
+</html>
+

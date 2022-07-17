@@ -1,0 +1,53 @@
+.JK{
+    border-style:double;
+border-top-style:solid ;
+border-bottom-style: dashed;
+border-width: 5px 5px 5px 5px;
+border-color: red blue green orange;
+padding:5px 5px 5px 5px;
+margin:5px;
+
+}
+.VISAKHAPATNAM{
+    border-style:double;
+border-top-style:solid ;
+border-bottom-style: dashed;
+border-width: 5px 5px 5px 5px;
+border-color: red blue green orange;
+padding:5px 5px 5px 5px;
+margin:5px;
+
+}
+.goa{
+    border-style:double;
+border-top-style:solid ;
+border-bottom-style: dashed;
+border-width: 5px 5px 5px 5px;
+border-color: red blue green orange;
+padding:5px 5px 5px 5px;
+margin:5px;
+
+}
+
+body{
+    background-color: aqua;
+    background-image: url(https://www.google.com/imgres?imgurl=http%3A%2F%2Fadoption.microsoft.com%2Fwp-content%2Fcustom-backgrounds-gallery%2Fcommunity%2Fnature%2Fcommunity-nature-Teams-background-85.jpg&imgrefurl=https%3A%2F%2Fadoption.microsoft.com%2Fmicrosoft-teams%2Fcustom-backgrounds-gallery%2F&tbnid=8X75f_6OBvbxeM&vet=10CAEQMyhoahcKEwiIqMriiv33AhUAAAAAHQAAAAAQAg..i&docid=JTf3QCGqoKRSeM&w=1920&h=1081&q=background%20images&ved=0CAEQMyhoahcKEwiIqMriiv33AhUAAAAAHQAAAAAQAg);
+}
+h1{
+    color: blueviolet;
+}
+.axc{
+    border-style: dotted;
+    border-top-style:solid ;
+    border-bottom-style: solid;
+    border-color: black;
+    border-width: 5px;
+    margin: 5px;
+}
+b{
+    font-size: 30px;
+    color: yellowgreen;
+}
+.menu{
+    text-align: left;
+}

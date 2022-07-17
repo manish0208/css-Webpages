@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class&objects-JS</title>
+</head>
+<body>
+    <script>
+        class Learner{
+            constructor(name){
+                this.name = name;
+            }
+            greet(){
+                console.log("hello everyone "+this.name);
+            }
+        }
+
+        console.log(typeof(Learner));        // class is a type of function
+        let l = new Learner("manish");       // l is the object of class Learner
+        l.greet();
+
+      /*  let Rect = class{
+            constructor(height,width){
+                this.height=height;
+                this.width=width;
+            }
+        };
+        console.log(Rect.name);
+        */
+        
+        /*
+        let Rect2 = class Rectangle{
+            constructor(height,width){          // consturctor helps in initialization and creation of object
+                this.height=height;             // only 1 constructor can be present in a class
+                this.width=width;
+            }
+            static get area(){
+                return this.height*this.width;
+            }
+           // a(){
+               // return this.height*this.width;
+            // }
+            static get perimeter(){                   // static cannot work with get()
+                return 2*this.height+2*this.width;      //this is not req. here ,, the value inside perimeter(x) is used like x.height+x.width
+            }
+        };
+        
+        const r2 = new Rect2(10,15);
+        //  console.log('area- '+r2.area);
+        console.log(Rect2.area);                    // for using static method
+        // console.log('perimeter '+r2.perimeter);
+        console.log(Rect2.perimeter);
+        */
+        
+        class Area{
+            constructor(x,y){
+                this.x=x;
+                this.y=y;
+            }
+            greet="hello";
+            get area(){                 // get is used to access the method
+                return this.x*this.y;
+            }
+
+        }
+
+        const p1 = new Area(4,5);
+        const p2 = new Area(10,20);
+        console.log(p1.greet);
+        console.log(p1.area);
+        console.log(p2.greet);
+        console.log(p2.area);
+        
+        class Area2{
+            constructor(width,height){
+                this.width=width;
+                this.height=height;
+            }
+            static area2(x){
+                return x.height*x.width;
+            }
+        }
+        let ar = new Area2(5,7);
+        console.log(Area2.area2(ar));
+    </script>
+</body>
+</html>

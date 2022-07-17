@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <button id="click">click me</button>
+
+    <script>
+        function abc(){
+            console.log("hello");
+        }
+        function def(){
+            console.log("everyone");
+        }
+       
+        var a = document.getElementById('click');
+        // a.onclick = abc;         // if using "onclick" one event-handler has more than one event it will always show the last event
+        // a.onclick = def; 
+        a.addEventListener("click",abc);   // if using "addEventListener" one event-handler can have more than one event and all of them will be executed.
+        a.addEventListener("click",def);  
+
+        function ghi(){
+            a.style.backgroundColor = "red";
+        }
+        function jkl(){
+            a.style.color = "white";
+            a.style.backgroundColor = "black";
+            a.style.fontSize = "20px";
+        }
+        a.addEventListener("mouseover",ghi);
+        a.addEventListener("mouseout",jkl);
+
+       // a.removeEventListener("mouseover",ghi);          // to remove an event
+       
+    </script>
+</body>
+</html>

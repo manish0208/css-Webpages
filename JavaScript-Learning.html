@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>  <!-- for single line comment -  //  is used
+              for multiple line comment -     /*    */  is used -->
+   <!-- <script src="script-JS.js"></script>    src used when external js is used-->
+    <!--<script>                                 /*used in internal JS */
+        document.write(10);                  /*used for testing only ,not to use much*/
+        console.log("hello Everyone");
+        window.alert("hii");                /* for showing pop-up messages*/
+    </script> -->
+
+    <script>
+         function print24(str)
+{
+    // Get hours
+    var h1 = Number(str[1] - '0');
+    var h2 = Number(str[0] - '0');
+    var hh = (h2 * 10 + h1 % 10);
+  
+    // If time is in "AM"
+    if (str[8] == 'A')
+    {
+        if (hh == 12)
+        {
+            document.write("00");
+            for (var i = 2; i <= 7; i++)
+                document.write(str[i]);
+        }
+        else
+        {
+            for (var i = 0; i <= 7; i++)
+                document.write(str[i]);
+        }
+    }
+  
+    // If time is in "PM"
+    else
+    {
+        if (hh == 12)
+        {
+            document.write("12");
+            for (var i = 2; i <= 7; i++)
+                document.write(str[i]);
+        }
+        else
+        {
+            hh = hh + 12;
+            document.write(hh);
+            for (var i = 2; i <= 7; i++)
+                document.write(str[i]);
+        }
+    }
+}
+  
+// Driver code
+ 
+    var str = "12:05:00AM";
+    print24(str);
+    </script>
+</body>
+</html>

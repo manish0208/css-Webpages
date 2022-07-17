@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS-JS</title>
+</head>
+<body>
+    <script> // 1st method is better presentation than 2nd method
+       /* const student={                      // student is object  1st method
+            first_name : 'manish',
+            last_name  : 'veerani',
+            full_name  : function(){
+                return this.first_name;
+            }
+        }
+        console.log(student.last_name);
+        */
+
+        // 2nd method
+        /*
+       var student = new Object();          // using object constructor
+
+       student.firstname = 'manish';      // 1st way of defining and storing value in variable
+       student["lastname"] = 'veerani';   // 2nd way of defining and storing value in variable
+       student.age = 21;
+       student.getFullName = function(){
+        return this.firstname +' '+ this.lastname;
+       };
+       console.log(student.getFullName());
+       */
+
+       /*
+       var employee = new Object();     // using object constructor
+
+       employee.id = '124567';
+       employee.name = 'manish veerani';
+       employee.salary = '500000';
+
+       employee.details = function(){
+        return 'Emp.id- '+this.id +' '+'Emp.name- '+ this.name +' '+'Emp.salary- '+this.salary;
+       };
+       console.log(employee.details());
+       console.log(employee.constructor);
+       
+       function name(a , b){
+        this.fname=a;
+        this.lname=b;
+        return b;
+       }
+       const obj1 = new name("manish","veerani");
+       console.log(obj1.constructor);
+       console.log(typeof(obj1));
+       console.log(obj1);
+       var obj2 = new name("tony", "Stark");
+       console.log(obj2);
+       */
+
+     /*  let laerner = {
+            firstname : "manish",
+            lastname : "veerani",
+
+            get fullname(){
+                return this.firstname+' '+this.lastname;
+            },
+            set fullname(name){
+                if(name.length < 6){
+                    alert("name is too short, need to enter atleast 6 characters");
+                    return;
+                }
+                [this.firstname,this.lastname] = name.split(" ");
+            }
+       };
+      // alert(laerner.fullname);
+       laerner.fullname = "intel ideapad";
+       alert(laerner.fullname);    // ans. is manish veerani when using get
+                                    // ans. is intelligent most when using set
+*/
+       /* function User(name, bday) {
+        this.name = name;
+        this.bday = bday;
+        Object.defineProperty(this, "age", {
+            get() {
+            let todayYear = new Date().getFullYear();
+            return todayYear - this.bday.getFullYear();
+            }
+        });
+        }
+
+        let john = new User("shakul", new Date(2000,08,02));
+
+        alert( john.bday );
+        alert(john.age);
+        */
+
+       
+       // Q. create the object of sq. rect. and circle which have their own properties(perimeter, area) 
+       // and to invoke getter and setter function
+       // length cannot exceed 100cm
+       // if length exceeds 100cm use 100 and show output
+       // dont use alert , use console.log
+
+       var square = {
+        get area(){
+        return  length*length+' sq.cm';
+        },
+        get perimeter(){
+        return 4*this.length;
+        },
+        
+        get prop(){
+            return 'area = '+area+'sq.cm  '+'perimeter = '+perimeter+'cm';
+        },
+        set area(length){
+            this.length=length;
+            if(length > 100){
+                this.length=100;
+                return area;
+            }     
+        }
+       }
+       length = 150;
+       console.log(square.area);
+       console.log(square.perimeter);
+
+
+
+       
+       
+
+
+
+    </script>
+</body>
+</html>

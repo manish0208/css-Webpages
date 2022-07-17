@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <script>
+        //alert("hii everyone "+document.body);
+    </script>
+</head>
+<body>
+   
+   <!-- 
+    <div  id="first">
+        <h1>Dom 
+            <p>
+                higigliug
+            </p>
+        </h1>
+    </div>
+    -->
+
+     <!--comment-->
+
+   <!-- 
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, voluptate!</p>
+    <div id="djnk">
+        <p>jfkufkuyk</p>
+        <br>
+    </div>
+    <div id="second">
+        hello Everyone
+    </div>
+    <div id="dom"></div>
+    -->
+
+
+    <!--
+    <p id="first">this is first</p>
+    <p class="second">this is second</p>
+    <h3 class="second">this is second</h3>
+
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ul>
+    -->
+
+    <h1>Accessing Elements in the DOM</h1>
+
+    <h2>ID (#demo)</h2>
+    <div id="demo">
+        <p> Access me by ID </p>
+    </div>
+
+    <h2>CLASS (.demo1)</h2>
+    <div class="demo1">
+         Access me by CLASS (1)
+    </div>
+    <div class="demo1">
+         Access me by CLASS (2)
+    </div>
+    <div class="demo1">
+        Access me by CLASS (3)
+    </div>
+    <div class="demo1">
+         Access me by CLASS (4)
+    </div>
+
+    <h2>TAG (Article)</h2>
+    <article> Access me by article (1) </article>
+    <article> Access me by article (2) </article>
+    <script>
+         // alert("hii everyone "+document.body);
+
+
+        // to access head-> document.head
+
+        // to access body-> document.body
+
+       //  alert(document.body.constructor.name);
+        // let a = document.body;
+        // alert(a.nodeType);
+       //  alert(a.firstChild.nodeType);                
+        // alert(document.body.tagName);                //ans.    body
+        // alert(document.body.firstChild.tagName);     ans.    undefined
+        // alert(document.body.firstChild.nodeName);   // ans.    #text
+        // alert(document.body.nodeType);                //ans.    1 (which means element)
+        // alert(document.body.firstChild.nodeType);     // ans.   3 (text)
+        // const n = document.body.childNodes;
+        // let x = '';
+        // for(var i = 0; i<n.length; i++){
+        //     x += n[i].nodeType + ' ' + n[i].nodeName + "<br>"; 
+        // }
+        // document.getElementById('djnk').innerHTML=x;
+       //  const y = document.getElementById('first').firstChild;
+     //    document.getElementById('dom').innerHTML = y.nodeName;
+
+        // const z = document.getElementById('second');
+        // document.getElementById('dom').innerHTML = z.nodeValue;
+
+      /*
+        var a = document.getElementById('first');
+       // alert(a);
+
+        var b = document.getElementsByClassName('second');
+       // alert(b);
+
+        var c = document.getElementsByTagName('p');
+       // alert(c);
+
+        var d = document.querySelectorAll("ul li");
+       // alert("total element in the list"+d.length);
+       // alert("total element in the list"+d.nodeValue);
+
+       // var e = document.getElementById('first');
+       // e.style.backgroundColor='red';
+       // e.style.color='blue';
+       // e.style.fontSize='25px';
+
+       */
+
+       var a = document.body;
+       a.style.textAlign='center';
+
+       var b = document.getElementById('demo');
+       b.style.border='2px solid blue';
+       //b.style.alignContent='center';
+       //b.style.textAlign='center';
+       b.style.fontSize='40px';
+
+       var c = document.getElementsByClassName('demo1');
+       for(var i=0; i<c.length; i++){
+         c[i].style.border='2px solid yellow';
+         c[i].style.fontSize='40px';
+       }
+
+       var d = document.getElementsByTagName('article');
+       for(var i=0; i<d.length; i++){
+         d[i].style.border='1px dashed red';
+         d[i].style.fontSize='30px';
+       }
+      
+    </script>
+    
+</body>
+</html>

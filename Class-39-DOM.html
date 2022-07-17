@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class-39-DOM</title>
+</head>
+<body>
+    <h1>Inserting - Removing - Replacing with the use of Button</h1>
+    <div id="parent">
+        <p id="remove">// this paragragh is going to be removed</p>
+        <p id="replace">// this paragragh is going to be replaced</p>
+    </div>
+
+    <button id="firstButton" onclick="insertParagraph()">Insert Paragraph</button>
+    <button id="SecondButton" onclick="removeParagraph()">Remove Paragraph</button>
+    <button id="ThirdButton" onclick="replaceParagraph()">Replace Paragraph</button>
+
+    <script>
+        function insertParagraph(){
+            var a = document.getElementById('parent');
+            a.insertAdjacentHTML("beforebegin","<p>Immortal part-1</p>");
+            a.insertAdjacentHTML("afterbegin","<p>Run towards your goal</p>");
+            a.insertAdjacentHTML("beforeend","<p>Skip the unnecessary things</p>");
+            a.insertAdjacentHTML("afterend","<p>Immortal part-2</p>");
+
+            a.style.textAlign = "right";
+
+        }
+        function removeParagraph(){
+            var b = document.getElementById('parent');
+            
+            var c = document.getElementById('remove');
+            b.removeChild(c);
+            
+            c.parentNode.removeChild(c);             
+        }
+        function replaceParagraph(){
+            var p2 = document.createElement('p');      
+            var p1 = document.createTextNode('replaced text -> I am going to be the HOKAGE ');
+            p2.appendChild(p1);       
+            var p3 = document.getElementById('parent');
+            p3.replaceChild(p1,replace);        
+        }
+
+        var e = document.getElementById('firstButton');
+        e.style.border ="2px solid red";
+        e.style.borderRadius = "10px";
+        e.style.backgroundColor = "aqua";
+        
+
+        var f = document.getElementById('SecondButton');
+        f.style.border ="2px solid blue";
+        f.style.borderRadius = "10px";
+        f.style.backgroundColor = "pink";
+
+        var g = document.getElementById('ThirdButton');
+        g.style.border ="2px solid green";
+        g.style.borderRadius = "10px";
+        g.style.backgroundColor = "gray";
+
+
+
+
+
+
+
+        // Q. Write a JavaScript program to get the width and height of the window
+
+
+    </script>
+
+</body>
+</html>

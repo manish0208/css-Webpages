@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> 
+    <title>Love Running</title>
+    <style>
+    header{
+        /*margin: 2px 0 2px 0;*/
+        top: 0px;
+    }
+    header >a{
+        line-height: inherit;
+        top: 30px;
+    }
+    .nav{
+        display: flex;
+        justify-content: flex-end;
+        position: fixed;
+        line-height: inherit;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 3px 0 rgba(0, 0, 0, 0.5);
+    }
+    ul{
+        list-style: none;
+    }
+    .nav >a{ 
+        position: fixed;
+        float: right;
+        top: 5px;
+    }
+    
+    .navlist{
+        top: 1px;
+        display: flex;
+        margin-right: 3rem;  
+        float: right;          
+    }
+    .navlist a{
+        display: flex;
+        top:5px;
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+    .image{
+        position: relative;
+        top: 50px;
+    }
+    .container{
+        width: 250px;
+        height: 150px;
+        background-color: brown;
+        color:black;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:center;
+        padding: 5px;
+        right: 50px;
+        text-align:center;
+        position: absolute;
+        top: 60%;
+        opacity: 0.6;
+    }
+    .container h1{
+        font-weight: 700;
+    }
+    .container p{
+        font-size: 15px;
+        color: white;
+    }
+    .left{
+        width: 33%;
+    }
+    .text-l{
+        
+        float: right;
+    }
+    .text-l-head{
+        width: 50%;
+    }
+    .center{
+        width: 33%;
+    }
+    .right{
+        width: 33%;
+    }
+    .text-r{
+        float: left;
+    }
+    .text-r-head{
+        float: left;
+        width: 50%;
+        border-bottom: 2px solid black;
+    }
+    </style>
+</head>
+<body>
+    <header>  
+        <a href="#" class="text"><h1>LOVE RUNNUNG</h1></a>
+        <div class="nav">   
+            <ul class="navlist">   
+                <li><a href="welcome.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="image">
+       <!-- <img src="https://media.istockphoto.com/photos/put-in-the-work-to-get-the-trophy-picture-id1022793390?b=1&k=20&m=1022793390&s=170667a&w=0&h=B4q6Q5QY96hlUvvlhj54iZI1Zxaj3wqaZ5h1ef2i-Ys=" width="99.5%" height="350px"> -->
+       <img src="https://picsum.photos/1400/600/?random">
+    </div>
+    <div class="container">
+        <h1>Love Running</h1>
+       <p> Dublin Docklands & Phoenix Park</p>
+    </div>
+        <div class="text-center"><h2>Why Love Running With Us?</h2></div>
+        <div>
+        <div class="left">
+            <div class="text-l">
+                <h3 class="text-l-head">FEEL HEALTHY</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, laudantium.</p>
+            </div>
+            <div class="text-l">
+                <h3 class="text-l-head">GET SOCIAL</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, dolores.</p>
+            </div>
+        </div>
+
+        <div class="center">
+            <div class="text-c">
+                
+            </div>
+            <div class="text-c">
+                
+            </div>
+        </div>
+
+
+        <div class="right">
+            <div class="text-r">
+                <h3 class="text-l-head">FEEL FREE</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, nobis?</p>
+            </div>
+            <div class="text-r">
+                <h3 class="text-l-head">FEEL STRONG</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, ipsum!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

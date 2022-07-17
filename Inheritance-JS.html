@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance-JS</title>
+</head>
+<body>
+    <script>
+        //  only chlid inherits from parent & parent cannot inherit from child 
+        /*
+        class Animal{
+            constructor(legs){
+                this.legs=legs;
+            }
+            walk(){
+                console.log("walking on legs "+this.legs+" legs");
+            }
+            static greet(){
+                console.log("greetings");
+            }
+        }
+
+        class Bird extends Animal{              // inheritance (Bird inherits Animal)
+            constructor(legs,food){
+                super(legs);                       // to access value from parent
+                this.food=food;
+            }                                      // super() invokes constructor from parent class
+            fly(){
+                console.log('flying');
+            }
+            foo(){
+                return this.food;
+            }
+            walk(){                                 // shadowing of method
+                super.walk();                       // if super() is not used method of child class will only work
+                console.log(this.food);             // parent class method will not be called
+            }
+        }
+
+        let b1 = new Bird(2,'insects');
+        console.log(b1.foo());
+        b1.walk();
+        b1.fly();
+        let b2 = new Animal(5);
+        b2.fly();                                   // it is not possible as parent doesnot inherits from child
+        Animal.greet();
+        Bird.greet();                               // static method can also be accessed by child class
+    */
+
+
+    // in JS parent class is not necessary 
+    // child class can inherit from array, strings 
+    
+    /*
+    class S1 extends Array{
+        add(a){
+            super.push(a);
+        }
+        remove(){
+            return super.shift();
+        }
+        empty(){
+            return this.length===0;
+        }
+
+    }
+
+    var n1 = new S1();
+    n1.add(91);
+    n1.add(92);
+    n1.add(93);
+    n1.add(94);
+    n1.add(95);
+    n1.remove();
+    console.log(n1);
+    while(!n1.empty()){
+        console.log(n1.remove());
+    }
+    console.log(n1);
+    */
+    /*
+    class S2 extends String{
+        reverse(s){
+            var rev = '';
+            for(var i=s.length-1; i>=0; i--){
+            rev += s[i];
+        }
+        console.log(rev);
+        }
+        index(s){
+           console.log(s.indexOf('m'));
+        }
+        slce(s){
+            console.log(s.slice(0,4));
+        }
+        len(s){
+           console.log(s.length);
+        }
+    }
+    var str = new S2();
+    var string = prompt("enter the string");
+    str.reverse(string);
+    str.index(string);
+    str.len(string);
+    str.slce(string);
+    */
+
+
+    //  MULTILEVEL INHERITANCE
+
+    class Animal{
+            constructor(legs){
+                this.legs=legs;
+            }
+            walk(){
+                console.log("walking on legs "+this.legs+" legs");
+            }
+            static greet(){
+                console.log("greetings");
+            }
+        }
+
+        class Bird extends Animal{              // inheritance (Bird inherits Animal)
+            constructor(legs,food){
+                super(legs);                       // to access value from parent
+                this.food=food;
+            }                                      // super() invokes constructor from parent class
+            fly(){
+                console.log('flying');
+            }
+            foo(){
+                return this.food;
+            }
+            walk(){                                 // shadowing of method
+                super.walk();                       // if super() is not used method of child class will only work
+                console.log(this.food);             // parent class method will not be called
+            }
+        }
+
+        class Sparrow extends Bird{
+            constructor(legs,food){
+                super(legs,food);
+            }
+            color(){
+                console.log('color is gray');
+            }
+        }
+
+        let b1 = new Bird(2,'insects');
+        console.log(b1.foo());
+        b1.walk();
+        b1.fly();
+        let b2 = new Animal(5);
+      //  b2.fly();                                   // it is not possible as parent doesnot inherits from child
+        Animal.greet();
+        Bird.greet();                               // static method can also be accessed by child class
+        let b3 = new Sparrow(2,'insects');
+        b3.color();
+        Sparrow.greet();
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume-of-Sphere</title>
+    <style>
+        body{
+            border: 2px solid green;
+            width: 400px;
+            /*display: flex;*/
+            justify-content: center;
+            align-items: center;
+            bottom: 35%;
+            right: 32%;
+            position: absolute;
+           /* text-align: left;*/
+            
+        }
+        #rad{
+            margin-left: 2px;
+        }
+        #vol{
+            margin-left: 2px;
+            margin-bottom: 5px;
+        }
+        #btn{
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="div">
+        <h3>Input radius value and get the volume of a sphere.</h3>
+        <label for="rad">Radius</label><br>
+        <input type="text" id="rad" name="rad"><br>
+        <label for="vol">Volume</label><br>
+        <input type="text" id="vol" name="vol" placeholder="0.0000"><br>
+        <button id="btn" onclick="cal()">Calculate</button>
+
+    </div>
+    <script>
+        function cal(){
+            let x = document.getElementById('rad').value;
+            let y = (4/3)*Math.PI*x*x*x;
+            document.getElementById('vol').value = y.toFixed(4);
+            return y;
+        }
+    </script>
+</body>
+</html>

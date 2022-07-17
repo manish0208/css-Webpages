@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    
+  }
+  body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+  }
+  .head {
+    padding: 60px;
+    text-align: center;
+    background: #44c2a9;
+    color: white;
+  }
+  .nav {
+    display: flex;
+    background-color: rgb(62, 51, 51);
+  }
+  .nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+  }
+  .nav a:hover {
+    background-color: rgb(249, 251, 247);
+    color: black;
+  }
+  .block-img {
+    background-color: rgb(137, 134, 134);
+    width: 100%;
+    padding: 20px;
+  }
+  .row {  
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .two-col {
+    flex: 30%;
+    background-color: #bfbdbd;
+    padding: 20px;
+  }
+  .main {
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+  }
+  .footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+  }
+  @media screen and (max-width: 700px) {
+    .row, .nav {   
+      flex-direction: column;
+    }
+  }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relations</title>
+</head>
+<body>
+    <div id="a">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, sit.</p>
+
+        <h2>jeronvtkognv</h2>
+
+        <p id="b"><button>click me</button></p>
+
+        <ol>
+            <li>ggg</li>
+            <li>jjj</li>
+        </ol>
+
+    </div>
+
+    <script>
+        var x = document.getElementById('a');
+        // console.log(x.firstElementChild.nodeName);
+        // a.firstElementChild.style.color="red";
+        // console.log(x.lastElementChild.nodeName);
+        if(x.hasChildNodes()){
+            var nodes = x.childNodes;
+            for(var i=0; i<nodes.length; i++){
+                console.log(nodes[i].nodeName);
+            }
+        }
+        var ch = document.getElementById('b');
+        console.log(ch.parentNode.nodeName);
+        console.log(ch.firstChild.nodeName);
+        ch.firstChild.style.backgroundColor='blue';
+        x.lastElementChild.style.color='red';
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallBack</title>
+</head>
+<body>
+    <h1 id="id">Heading 1</h1>
+    <script>
+    var a = [1,5,8,10,15,20,25];
+    var c = n1 => n1<10;       // call-Back
+    var b = a.filter(c);       //call-back are mostly used in synhronous function
+    console.log(b);
+
+    //Asynchronous
+    const p = _=>console.log("wait for some time");     // _=> anonyomous function
+    setTimeout(p,5000);                                 // 1st output will be printed 
+    console.log("output");                              // then after 5sec. p will be printed
+
+
+    function b1(msg){
+        document.getElementById('id').innerHTML = msg;
+    }
+
+    function a1(){
+        b1("first msg");
+    }
+    function a2(){
+        b1("second msg");
+    }
+
+   /* function calculate(n,n2){
+        let r = n*n2;
+        return r;
+    }
+    */
+   function calculate(n,n2,callback1){
+     let f= n*n2;
+     callback1(f);
+   }
+   calculate(10,30,b1);
+   // var ans = calculate(10,20);
+   // b1(ans);                  // call-back
+   // console.log(ans);
+
+    //a2();              1st a1() will be printed
+    //a1();
+    </script>
+    
+</body>
+</html>

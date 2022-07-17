@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked-List-JS</title>
+</head>
+<body>
+    <script>
+    class Node {
+        constructor(value){
+            this.value = value,
+            this.next = null
+        }
+    }
+/*
+    class LinkedList{
+
+        //Creates a linkedlist with passed value.
+        constructor(value){
+            //Creates a head node
+            this.head = {
+                value: value,
+                next : null
+            };
+            //As there is only one element in the list, head is also a tail
+            this.tail = this.head;
+            //Length would be 1
+            this.length = 1;
+        }
+
+        //Add the node at the tail of the linkedlist
+        append(value){
+            //Create a new Node by creating a instance of a Node class
+            const newNode = new Node(value);
+            // Check if head is present or not, if head is empty creates a head
+            if (this.head == null){
+                this.head = node;
+            } //Else creates a tail
+            else{
+            //We need to point current tail's next to the newNode
+            this.tail.next = newNode;
+            //Now make newNode a tail node
+            this.tail = newNode;
+            //Increase the length by 1
+            this.length++;
+            }
+            return this;
+        }
+
+        //Add the node as a head of the linkedlist
+        prepend(value){
+            //Create a new Node by creating a instance of a Node class
+            const newNode = new Node(value);
+            //Points this node's next to the head
+            newNode.next = this.head;
+            //Now make this node a head node
+            this.head = newNode;
+            //Increase the length by 1
+            this.length++;
+            return this;
+        }
+
+        //Insertes a node at specified index, say we want to insert 30 at index 2
+        //Current list: 10 -> 20 -> 40 -> 50
+        insert(index, value){
+            //Create a new Node by creating a instance of a Node class
+            const newNode = new Node(value);
+
+            //Counter to loop
+            let count = 1;
+
+            //Create a temp node to traverse through list, point it to the head
+            //Pointing to 10
+            let previousNode = this.head;
+
+            //Traverse the list one node before the specified index
+            while(count < index){
+                //Points temp node to its next node
+                previousNode = previousNode.next;
+
+                //Increase the count to compare it with index;
+                count++;
+            }
+            //When the loop ends you will able have temp node pointing to the previous node of the index.
+
+            //First, points new node's next to the current node's next, so it can hold the list ahead of its index
+            //Current node = 20, New node = 30, So new node will be 30 -> 40 -> 50
+            newNode.next = previousNode.next;
+
+            //Now just point current node's next to new node.
+            //Merge left side of the list, 10 -> 20 -> 30 -> 40 -> 50
+            previousNode.next = newNode;
+        }
+
+        deleteHead(){
+            this.head = this.head.next;
+            this.length--;
+        }
+
+        deleteTail(){
+            let secondLastNode = this.head;
+            while(secondLastNode.next.next !== null){
+                secondLastNode = secondLastNode.next;
+            }
+            secondLastNode.next = null;
+            this.length--;
+    }
+
+    deleteAtIndex(index){
+        if(index === 0){
+            this.head = this.head.next;
+            this.length--;
+            return this;
+        }
+        let count = 1;
+        let previousNode = this.head;
+        while(count < index){
+            previousNode = previousNode.next;
+            count++;
+        }
+        previousNode.next = previousNode.next.next;
+        this.length--;
+        return this;
+        }
+
+        deleteNodeByValue(value){
+            //Current node to loop through the list
+            let currentNode = this.head;
+
+            //Previous node to update its pointer to next.next node
+            let previousNode = null;
+
+            while(currentNode != null){
+
+                //Check if we find the value we are looking for
+                if(currentNode.value === value){
+
+                    //Check if it is a head or not by comparing previous node with null
+                    if (previousNode === null) {
+                        //If it is head, then update head to nextnode
+                        this.head = currentNode.next;
+                    }
+                    else{
+                        //If it is not head then simply update previous node
+                        previousNode.next = currentNode.next;
+                    }
+                    //Reduce length by 1
+                    this.length--;
+                }
+
+                //Previous node will point to this node with every iteration
+                previousNode = currentNode;
+                //Current node will point to next node for iteration
+                currentNode = currentNode.next;
+            }
+        }
+
+        searchElement(value){
+            let currentNode = this.head;
+            while(currentNode !== null){
+                if(currentNode.value === value) return true;
+                currentNode = currentNode.next;
+            }
+            return false;
+        }
+
+        printList(){
+            //Creates an empty array.
+            let printArrayList = [];
+            //Pointer which points to the head node
+            let currentNode = this.head;
+            //Start iterating from the first node till you reach the last node
+            while(currentNode !== null){
+                //Add every node's value to the array
+                printArrayList.push(currentNode.value);
+                //Point pointer to the next node
+                currentNode = currentNode.next;
+            }
+            //Return the array
+            return printArrayList.join(' -> ');
+        }
+    }
+    console.log('Creating a LinkList at constant time O(1): 20:');
+    const myLinkedList = new LinkedList(20);
+    console.log(myLinkedList.printList());
+    console.log('');
+
+    console.log('Appendding Node at constant time O(1): 40 -> 50:');
+    myLinkedList.append(40).append(50);
+    console.log(myLinkedList.printList());
+    console.log('');
+
+    console.log('Prepending Node at constant time O(1): 10:');
+    myLinkedList.prepend(10);
+    console.log(myLinkedList.printList());
+    console.log('');
+
+    console.log('Inserting Node at index 2 with time complexty of O(n): 30');
+    myLinkedList.insert(2,30);
+    console.log(myLinkedList.printList());
+    console.log('Inserting at index 1: 15');
+    myLinkedList.insert(1,15);
+    console.log(myLinkedList.printList());
+    console.log('');
+
+    console.log('Deleting Head-Node at constant time O(1): 10:');
+    myLinkedList.deleteHead();
+    console.log(myLinkedList.printList());
+    console.log('');
+
+    console.log('Deleting Tail-Node at O(n) time: 50:');
+    myLinkedList.deleteTail();
+    console.log(myLinkedList.printList());
+    console.log('');
+
+    console.log('Deleting Node at index 2 with time complexty of O(n): 30:');
+    myLinkedList.deleteAtIndex(2);
+    console.log(myLinkedList.printList());
+    console.log('');
+
+    console.log('Deleting Node with value 40 with time complexty of O(n):');
+    myLinkedList.deleteNodeByValue(40);
+    console.log(myLinkedList.printList());
+    console.log('');
+
+    console.log('Searching for value 20 with time complexty of O(n):');
+    console.log(myLinkedList.printList());
+    console.log(myLinkedList.searchElement(20));
+    console.log('Searching for value 50 with time complexty of O(n):');
+    console.log(myLinkedList.searchElement(50));
+*/
+
+
+
+
+
+
+// Q.1  Merge two sorted linked lists and return it as a new sorted list.
+// Constraints:
+//The number of nodes in both lists is in the range [0, 50].
+//-100 ≤ Node.val ≤ 100
+//Both l1 and l2 are sorted in non-decreasing order.
+
+
+class ListNode{
+        constructor(value){
+            // create head node
+            this.head = {
+                value : value,
+                next : null
+            }
+            // if you have only one element then head = tail
+            this.tail = this.head;
+            this.length = 1;
+        }
+        append1(value){
+            //Create a new Node by creating a instance of a Node class
+            const newNode1 = new Node(value);
+            // Check if head is present or not, if head is empty creates a head
+            if (this.head == null){
+                this.head = node;
+            } //Else creates a tail
+            else{
+            //We need to point current tail's next to the newNode
+            this.tail.next = newNode1;
+            //Now make newNode a tail node
+            this.tail = newNode1;
+            //Increase the length by 1
+            this.length++;
+            }
+            return this;
+        }
+        //printList1(){
+        //    //Creates an empty array.
+        //    let printArrayList1 = [];
+        //    //Pointer which points to the head node
+        //    let currentNode1 = this.head;
+        //    //Start iterating from the first node till you reach the last node
+        //    while(currentNode1 !== null){
+        //        //Add every node's value to the array
+        //        printArrayList1.push(currentNode1.value);
+        //        //Point pointer to the next node
+        //        currentNode1 = currentNode1.next;
+        //    }
+        //    //Return the array
+        //    return printArrayList1.join(' -> ');
+        //}
+} 
+/*
+var mergeLinkedList = function(l1,l2){
+    if(l1 == null ){return l2;}
+    if(l2 == null ){return l1;}
+
+    let head = null;
+    let temp = head;
+    if(l1.value < l2.value){
+        temp = head = new ListNode(l1.value);
+        l1 = l1.next;
+    }
+    else {
+        temp = head = new ListNode(l2.value);
+        l2 = l2.next;
+    }
+    while(l1 && l2){
+        if(l1.value < l2.value){
+            temp.next = new ListNode(l1.value);
+            l1 = l1.next;
+            temp = temp.next;
+        }
+        else{
+            temp.next = new ListNode(l2.value);
+            l2 = l2.next;
+            temp = temp.next;
+        }
+    }
+    while(l1){
+        temp.next = new ListNode(l1.value);
+        l1 = l1.next;
+        temp = temp.next;
+    }
+    while(l2){
+        temp.next = new ListNode(l1.value);
+        l1 = l1.next;
+        temp = temp.next;
+    }
+    return head;
+}
+*/
+var mergeTwoLists = function(l1, l2) {
+    
+    var res = new ListNode();
+    var curr = res;
+    while(l1 !== null && l2 !== null) {
+        if(l1.value <= l2.value) {
+            // Set current node to l1 if less than or equal
+            curr.next = l1;
+            // Move l1's head to next
+            l1 = l1.next
+        } else {
+            // Else same case for l2
+            curr.next = l2;
+            l2 = l2.next;
+        }
+        // Move current to next
+        curr = curr.next
+    }
+
+    if (l1 !== null) {
+        curr.next = l1;
+    } else if (l2 !== null) {
+        curr.next = l2;
+    }
+
+    return res.next;
+}
+
+const list1 = new ListNode(2);
+list1.append1(4).append1(6).append1(8).append1(10);
+console.log(list1);
+const list2 = new ListNode(1);
+list2.append1(3).append1(5).append1(7).append1(9);
+console.log(list2);
+const list3 = new ListNode();
+list3.head = mergeTwoLists(list1.head , list2.head);
+list3.length = list1.length + list2.length;
+console.log(list3);
+
+
+
+//Q2. Given the head of a singly linked list, return true if it is a palindrome.
+class Palindrome{
+    constructor(value){
+        this.value = value;
+        this.head ={
+            value : value,
+            next  : null
+        }
+        this.tail = this.head;
+        this.length = 1;
+    }
+    append2(value){
+            //Create a new Node by creating a instance of a Node class
+            const newNode2 = new Node(value);
+            // Check if head is present or not, if head is empty creates a head
+            if (this.head == null){
+                this.head = node;
+            } //Else creates a tail
+            else{
+            //We need to point current tail's next to the newNode
+            this.tail.next = newNode2;
+            //Now make newNode a tail node
+            this.tail = newNode2;
+            //Increase the length by 1
+            this.length++;
+            }
+            return this;
+        }
+    }
+    function plndrome(head){
+        var temp = head ; 
+        var is_palin = true;
+        var stack = [];
+
+        while(temp != null){
+            stack.push(temp.value);
+            temp = temp.next;
+        }
+
+        while(head != null){
+            var i = stack.pop();
+            if(head.value == i){
+                is_palin = true;
+            }
+            else{
+                is_palin = false;
+                break;
+            }
+            head = head.next;
+        }
+        return is_palin;
+    }
+
+var lst1 = new Palindrome(1);
+lst1.append2(2).append2(3).append2(4).append2(3).append2(2).append2(1);
+console.log(lst1);
+var result = plndrome(lst1);
+console.log(result);
+
+
+//Q3. Given a non-empty, singly linked list with head node head, write a program
+//    to return a middle node of the linked list. If there are even nodes, 
+//    then there would be two middle nodes, we need to print the second middle element.
+
+//Q4. Given a linked list, print reverse of it
+
+    class Reverse{
+        constructor(value){
+            this.value = value;
+            this.head = {
+                value : value,
+                next : null
+            }
+            this.tail = this.head;
+            this.length = 1;
+        }
+
+        append3(value){
+            const revrse = new Node(value);
+
+            if(this.head === null){
+                this.head = node;
+            }
+            else{
+                this.tail.next = revrse;
+                this.tail = revrse;
+                this.length++;
+            }
+            return this;
+        }
+    }
+        function rev(head){
+            var t = head;
+            var stack1 = [];
+            var stack3 = [];
+            while(t != null){
+                stack1.push(t.value);
+                t = t.next;
+            }
+            while(head != null){
+                var stack2 = stack1.pop();
+                stack3.push(stack2);
+                    head = head.next;
+                //if(head.value === stack2){
+                    
+                //}
+            }
+            return stack3;
+        }
+    
+
+    var rev1 = new Reverse(10);
+    rev1.append3(9).append3(8).append3(7).append3(6).append3(5).append3(4);
+    console.log(rev1);
+    var res = rev(rev1);
+    console.log(res);
+//Q5. Write a function to check if the given two linked lists are identical.
+
+//Q6. Given a singly linked list, rotate the linked list counter-clockwise by k nodes.
+//    Where k is a given positive integer. For example, if the given linked 
+//    list is 10->20->30->40->50->60 and k is 4, the list should be modified to 
+//    50->60->10->20->30->40. Assume that k is smaller than the count of nodes in a linked list.
+
+    </script>
+</body>
+</html>

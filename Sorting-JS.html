@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting-JS</title>
+</head>
+<body>
+    <script>
+        // 7 1 6 8  SELECTION SORT -> InPlace Sort ->time complexity-O(n sq.) ->space complexity-O(1)
+        var a = [7,1,6,8];
+        for(var i=0; i<a.length; i++){
+            var small = i;
+            for(var j=i+1; j<a.length; j++){
+                if(a[j] < a[small]){
+                    small = j;   
+                }
+            }
+            if(small !== i){
+                [a[i], a[small]] = [a[small], a[i]];
+            }
+        }
+        console.log("SELECTION SORT ->  " + a);
+        
+       /* function selectionSort(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                let lowest = i
+                for (let j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[lowest]) {
+                    lowest = j
+                }
+                }
+                if (lowest !== i) {
+                // Swap
+                [arr[i], arr[lowest]] = [arr[lowest], arr[i]];
+                }
+            }
+            return arr
+            }
+        console.log(selectionSort([8, 55, 10, 2]))
+    */
+
+
+
+
+    // BUBBLE SORT -> InPlace Sort ->time complexity-O(n sq.) ->space complexity-O(1)
+    /*
+    function swap(arr, first_Index, second_Index){
+        var temp = arr[first_Index];
+        arr[first_Index] = arr[second_Index];
+        arr[second_Index] = temp;
+    }
+
+    function bubble_Sort(arr){
+
+        var len = arr.length,
+            i, j, stop;
+
+        for (i=0; i < len; i++){
+            for (j=0, stop=len-i; j < stop; j++){
+                if (arr[j] > arr[j+1]){
+                    swap(arr, j, j+1);
+                }
+            }
+        }
+
+        return arr;
+    }
+    console.log("bubble-sort ->  " + bubble_Sort([3,4,1,8]));
+    */
+
+    const bubbleSort = arr => {
+        let swapped = false;
+        const a = [...arr];
+        for(let i=0; i < a.length-1; i++){
+            swapped=false;
+            for(let j=0; j < a.length-i; j++){
+                if(a[j+1] < a[j]){
+                    [a[j],a[j+1]] = [a[j+1],a[j]];
+                    swapped = true;
+                }
+            }
+            if(!swapped){
+                return a;
+            }
+        }
+        return a;
+    };
+    console.log("bubble-sort ->  " + bubbleSort([3,4,1,8]));
+
+
+
+
+    // INSERTION SORT -> OutPlace sort -> time complexity-O(n sq.) ->space complexity-O(n)
+    function insertionSort(arr) {
+    for (let i = 1; i < arr.length; i++) {
+      let currentValue = arr[i];
+      let j
+      for (j = i - 1; j >= 0 && arr[j] > currentValue; j--) {
+        arr[j + 1] = arr[j];
+      }
+      arr[j + 1] = currentValue;
+    }
+    return arr;
+    }
+    console.log("insertion-sort ->  " + insertionSort([21,2,9,6,7,1]));
+
+
+
+  // Merge Sort
+  function mSort (array) {
+      if (array.length === 1) {
+      return array;                            // return once we hit an array with a single item
+   }
+   const middle = Math.floor(array.length / 2); // get the middle item of the array rounded down
+   const left = array.slice(0, middle);         // items on the left side
+   const right = array.slice(middle);           // items on the right side
+   console.log(middle);
+   return merge(
+      mSort(left),
+      mSort(right)
+   )
+   }
+   // compare the arrays item by item and return the concatenated result
+   function merge (left, right) {
+      let result = [];
+      let leftIndex = 0;
+      let rightIndex = 0;
+      while (leftIndex < left.length && rightIndex < right.length) {
+         if (left[leftIndex] < right[rightIndex]) {
+         result.push(left[leftIndex]);
+         leftIndex++;
+         //document.write("</br>");        
+         } else {
+         result.push(right[rightIndex]);
+         rightIndex++;      
+      }
+   }
+   return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
+   }
+   const list = [4,7,5,9,1,3,8,2];
+   console.log("merge sort -> "+mSort(list));
+
+
+
+
+   // QUICK SORT
+   function part(l,h){
+    //var middle = (h+l)/2;
+    var pivot = q[l];
+    var i = l;
+    var j = h; 
+    while(i<j){
+        do{
+            i++;
+        }while(q[i] <= pivot);
+        do{
+            j--;
+        }while(pivot < q[j]);
+        if(i<j){
+            [q[i],q[j]] = [q[j],q[i]];
+        }
+    }
+    [q[l],q[j]] = [q[j],q[l]];
+    return j;
+   }
+   function quick(l,h){
+        if(l<h){
+            j = part(l,h);
+            quick(l,j);
+            quick(j+1,h);
+        }
+        return q;
+   }
+
+   var q = [8,2,1,10,5,6,21,17,18];
+   var l = 0;
+   var h = q.length;
+   console.log("quick sort -> "+quick(l,h));
+
+
+
+
+
+    </script>
+</body>
+</html>

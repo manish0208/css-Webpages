@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymorphism-JS</title>
+</head>
+<body>
+    <script>
+        class Shape{
+            area(){
+                return 0;
+            }
+            perimeter(){
+                return 0;
+            }
+            toString(){
+                return Object.getPrototypeOf(this).constructor.name;
+            }
+        }
+        class Circle extends Shape{
+            constructor(r){
+                super();
+                this.radius = r;
+            }
+            area(){
+                return Math.PI * this.radius**2;
+            }
+            perimeter(){
+                return Math.PI * this.radius*2;
+            }
+        }
+        class Rectangle extends Shape{
+            constructor(w,h){
+                super();
+                this.width = w;
+                this.height = h;
+            }
+            area(){
+                return this.height * this.width;
+            }
+            perimeter(){
+                return (this.height + this.width)*2;
+            }
+        }
+        function cumulateShapes(shapes) {
+            return shapes.reduce((sum, shape) => {
+                if (shape instanceof Shape) {
+                console.log(`Shape: ${shape.toString()} - area: ${shape.area()}`);
+                console.log(
+                    `Shape: ${shape.toString()} - perimeter: ${shape.perimeter()}`
+                );
+                return sum + shape.area();
+                }
+                throw Error("Bad argument shape.");
+            }, 0);
+        }
+
+        const shapes = [new Circle(3), new Rectangle(2, 3)];
+
+        console.log(cumulateShapes(shapes));
+
+        // ARROW function
+        var pro = (a,b) => a*b;
+        console.log(pro(5,6));
+
+       /* function ar(w,h){
+            var arr = w*h;
+            console.log(arr);
+        } */
+        var ar = (w,h) =>{
+            var arr = w*h;
+            console.log(arr);
+        }
+        ar(6,6);
+        
+        var a3 = () =>{
+            console.log("hello");
+        }
+        a3();       // ans. is hello
+
+
+        var a4 = s =>{
+            console.log(s*s);
+        }
+        a4(10);
+
+        // ternary operator with ARROW function
+        var a5 = 10;
+        let a6 = (a5>5)? ()=> console.log("Bigger NUmber") : ()=>console.log("Lesser NUmber");
+        a6();
+
+        /*
+        const a = [1,2,3,4,5];
+        function sum1(sum,i){
+            return sum+i;
+        }
+        let b = a.reduce(sum1);   // reduce is combination of map & filter
+        console.log(b);
+        */
+
+        // ARGUMENT BINDING
+        let s = function(){
+            console.log(arguments);
+        }
+        s(10,20,30);
+
+        // argument binding doesnot work with => function
+       /* let s1 = () => {
+            console.log(arguments);
+        }
+        s1(10,20,30);
+        */
+
+        // SPREAD OPERATOR (...)
+        let s1 = (...a) => {
+            console.log(a);
+        }
+        s1(10,20,30);
+    </script>
+</body>
+</html>

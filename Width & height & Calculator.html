@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Width & height & Calculator</title>
+
+    <style>
+        body {
+            justify-content: center;
+        }   
+        #inp {
+            width: 100px;
+            border: 1.5px solid blue;
+            box-shadow: 2px gray;
+        } 
+        
+    </style>
+
+</head>
+<body>
+    <!--Write a JavaScript program to get the width and height of the window-->
+
+  <!--  <div>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, ex? <button onclick="alert('hello')">click me</button></p>
+    
+
+        <div id="GTA">
+
+        </div>
+        
+    </div>-->
+        <h1>Calculator</h1>
+        <div>
+            <input id="inp" type="text" placeholder="Type....">
+        </div>
+        <div onclick="button()">
+            <button onclick="display('1')" id="btn1">1</button>
+            <button onclick="display('2')" id="btn2">2</button>
+            <button onclick="display('3')" id="btn3">3</button>
+            <button onclick="display('*')" id="mul">*</button><br>
+            <button onclick="display('4')" id="btn4">4</button>
+            <button onclick="display('5')" id="btn5">5</button>
+            <button onclick="display('6')" id="btn6">6</button>
+            <button onclick="display('/')" id="div">/</button><br>
+            <button onclick="display('7')" id="btn7">7</button>
+            <button onclick="display('8')" id="btn8">8</button>
+            <button onclick="display('8')" id="btn9">9</button>
+            <button onclick="display('-')" id="sub">-</button><br>
+            <button onclick="solve()" id="equal">=</button>
+            <button onclick="display('0')" id="btn0">0</button>
+            <button onclick="display('+')" id="plus">+</button>
+            <button onclick="cancel()" id="cancel">C</button>
+        </div>
+    
+
+    <script>
+        // function size(){
+        //     var w = window.innerWidth;
+        //     var h = window.innerHeight;
+        //     var dispaly = "Width: " + w + ", " + "Height: " + h;
+        //     document.getElementById('GTA').innerHTML = dispaly;
+        // }
+        // window.addEventListener("resize",size);
+       /* const one = document.getElementById('btn1');
+        const two = document.getElementById('btn2');
+        const three = document.getElementById('btn3');
+        const four = document.getElementById('btn4');
+        const five = document.getElementById('btn5');
+        const six = document.getElementById('btn6');
+        const seven = document.getElementById('btn7');
+        const eight = document.getElementById('btn8');
+        const nine = document.getElementById('btn9');
+
+        const zero = document.getElementById('btn0');
+        const mul = document.getElementById('mul');
+        const div = document.getElementById('div');
+        const sub = document.getElementById('sub');
+        const plus = document.getElementById('plus');
+        const cancel = document.getElementById('cancel');
+        */
+
+        function dispaly(val){
+             document.getElementById('inp').value += val;
+             return val;
+        }
+
+        function solve(){
+            let x = document.getElementById('inp').value;
+            let y = eval(x);
+            document.getElementById('inp').value = y;
+            return y;
+        }
+        function cancel(){
+            //let z = " ";
+            document.getElementById('inp').value = " ";
+        }
+    </script>
+    
+</body>
+</html>

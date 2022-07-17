@@ -1,0 +1,432 @@
+p{
+    font-size: 40px;
+}
+ol{
+    font-size: 40px;
+}
+h1{
+border-style:double;
+border-top-style:solid ;
+border-bottom-style: dashed;
+border-width: 5px 20px 10px 50px;
+border-color: red blue green orange;
+padding:5px 10px 15px 20px;
+margin:50px;
+}
+
+.styled-table{
+    box-shadow: 0 0 23px rgba(0, 0, 0, 0.17);
+    border-bottom-style:solid;
+    border-color: green;
+    margin: 40px;
+    font-size: 1em;
+    border-collapse: collapse;
+    width: 400px;
+
+}
+tbody{
+    border-bottom: 1px solid;
+}
+.active-row{
+    color: green;
+    background-color:whitesmoke;
+}
+thead{
+    background-color: aquamarine;
+    text-align: left;
+    color: white;
+}
+
+#translate{  
+    position: relative;
+    background-color: lightseagreen;
+    width: 150px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 20px;
+    
+}
+#translate:hover{
+    transform: translate(80px,150px); /* transform-translate*/
+}
+#rotate{  
+    position: relative;
+    background-color:gray;
+    width: 150px;
+    height: 100px;
+    top: 100px;
+    left: 50px;
+    border: 1px solid black;
+    border-radius: 20px;
+    
+
+}
+#rotate:hover{
+    transform: rotate(40deg);/* transform-rotate*/
+}
+#skew{  
+    position: relative;
+    background-color: lightcoral;
+    width: 150px;
+    height: 100px;
+    top: 200px;
+    left: 300px;
+    border: 1px solid black;
+    border-radius: 20px;
+    
+
+}
+#skew:hover{
+    transform: skewY(40deg);
+}
+#scale{  
+    position: relative;
+    background-color: lightblue;
+    width: 150px;
+    height: 100px;
+    top: 300px;
+    left: 150px;
+    border: 1px solid black;
+    border-radius: 20px;
+    
+
+}
+#scale:hover{
+    transform: scale(2,2);
+}
+
+/* Transition */
+/*body{
+    margin: 50%;
+}*/
+.main{
+    display: inline-block;
+    width: 200px;
+}
+h1{
+    color:green;
+    padding: 25px;
+}
+.con{
+    width: 100px;
+    height: 120px;
+}
+.box1{
+    background-color: red;
+    
+}
+.box1:hover{
+    transition: all 3s;
+}
+.box2{
+    background-color: blue;
+    
+}
+.box2:hover{
+    transition: all 3s;
+}
+.box3{
+    background-color: pink;
+    
+}
+.box3:hover{
+    transition: all 3s;
+    width: 300px;
+    height: 300px;
+}
+
+
+/* animation */
+div{
+    text-align: center;
+    width: 150px;
+    height: 200px;
+    border: 120px;
+    border-radius: 20px;
+    background-color: aquamarine;
+    transition: 0.4s;
+    animation: a1 10s linear infinite;
+
+   animation-play-state: paused;
+
+}
+
+@keyframes a1 {
+   /* 0% {
+        
+        background-color: beige;
+        transform: translate(40px,60px);
+    }
+    25% {
+        background-color: blue;
+        transform: translate(140px,160px);
+    }
+    50% {
+        background-color: red;
+        transform: rotate(50deg);
+    }
+    75% {
+        background-color: royalblue;
+        transform: scale(2,2);
+    }*/
+    100% {
+        background-color: green;
+        transform: rotate(1turn);
+    }
+    
+}
+
+div:hover{
+    background-color: black;
+    animation-duration: 5s;
+    animation-play-state: running;
+}
+
+/* HomeWork */
+
+/*.HW{
+    width: 200px;
+    height: 150px;
+    font-size: 100px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: aquamarine;
+    transition: width 3s;
+    transition-timing-function: ease;
+}
+
+.HW #OK{
+   
+    display: none;
+}
+.HW:hover #Submit{
+    
+    
+    display: none;
+}
+
+.HW:hover #OK{
+    width: 200px;
+    height: 200px;
+
+    font-size: 150px;
+    border: 1px solid black;
+    background-color: royalblue;
+    color: azure;
+    border-radius: 100%;
+    display: inline-block;
+}*/
+
+/* Animation assignment start */
+@-webkit-keyframes extend {
+    0% {
+        width: 600px;
+        height: 200px;
+        border-radius: 100px;
+        } 10% {
+        width: 610px;
+        height: 210px;
+        background: #fff;
+        margin-left: - 5px;
+        margin-top: - 5px;
+        } 20% {
+        width: 600px;
+        height: 200px;
+        background: #6fb07f;
+        margin-left: 0px;
+        margin-top: 0px;
+        } 100% {
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+        margin-left: 190px;
+        background: #6fb07f;
+        }
+    }
+@keyframes extend {
+    0% {
+        width: 600px;
+        height: 200px;
+        border-radius: 100px;
+        }
+  10% {
+        width: 610px;
+        height: 210px;
+        background: #fff;
+        margin-left: - 5px;
+        margin-top: - 5px;
+        }
+  20% {
+        width: 600px;
+        height: 200px;
+        background: #6fb07f;
+        margin-left: 0px;
+        margin-top: 0px;
+        } 
+  100% {
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+        margin-left: 190px;
+        background: #6fb07f;
+        }
+    }
+
+@-webkit-keyframes disappear {
+    0% {
+        opacity: 1;
+        } 20% {
+        color: #fff;
+        } 100% {
+        opacity: 0;
+        }
+    }
+@keyframes disappear {
+    0% {
+        opacity: 1;
+        } 20% {
+        color: #fff;
+        } 100% {
+        opacity: 0;
+        }
+    }
+
+@-webkit-keyframes appear {
+    0% {
+        opacity: 0;
+        } 70% {
+        opacity: 0;
+        } 100% {
+        opacity: 1;
+        }
+    }
+@keyframes appear {
+    0% {
+        opacity: 0;
+        } 70% {
+        opacity: 0;
+        } 100% {
+        opacity: 1;
+        }
+    }
+html {
+    background: #fff
+    }
+
+input, button, submit {
+    border: none
+    }
+
+.cont {
+    position: absolute;
+    width: 610px;
+    height: 10px;
+    left: 50%;
+    top: 50%;
+    margin: -100px 0 0 -300px
+    }
+
+button {
+    border-width: 1px;
+    width: 600px;
+    height: 200px;
+    /*border-radius*/
+    border-radius: 100px;
+    background: #fff;
+    position: absolute;
+    border: 5px solid #6fb07f
+    }
+
+button > span {
+    font-size: 48px;
+    color: #6fb07f
+    }
+
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    
+    opacity: 0
+    }
+
+button:focus {
+    /*animation*/
+    -webkit-animation: extend 1s ease-in-out;
+    -ms-animation: extend 1s ease-in-out;
+    animation: extend 1s ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    /* Chrome, Safari, Opera */
+    animation-fill-mode: forwards
+    }
+
+button:focus > span {
+    /*animation*/
+    -webkit-animation: disappear 1s ease-in-out;
+    -ms-animation: disappear 1s ease-in-out;
+    animation: disappear 1s ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    /* Chrome, Safari, Opera */
+    animation-fill-mode: forwards
+    }
+
+button:focus > img {
+    /*animation*/
+    -webkit-animation: appear 1s ease-in-out;
+    -ms-animation: appear 1s ease-in-out;
+    animation: appear 1s ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    /* Chrome, Safari, Opera */
+    animation-fill-mode: forwards
+    }
+  
+/*animation assignment end*/
+
+
+/* Wiggle Assignment start */
+div3{
+  position: relative;
+    display: flex;
+    width: 150px;
+    height: 50px;
+    border: 2px solid blue;
+    border-top-color: 2px #6fb07f;
+    background-color: slategray;
+    color: aliceblue;
+}
+.wiggle{
+    left: 50px;
+    top: 50px;
+    align-items: center;
+    justify-content: center; 
+}
+.wiggle:hover{
+    animation: rotate 0.7s ease-in-out both ;
+    animation-iteration-count: infinite;
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(6deg);
+    }
+    50%{
+        transform: rotate(-6deg);
+    }
+    75%{
+        transform: rotate(1deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+
+
+
+/* Wiggle Assignment end */

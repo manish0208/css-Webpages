@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Calculator</title>
+</head>
+<body>
+    <script>
+        
+        function fibonacciSeries(){
+            var a = prompt("how many numbers do you want? ");
+            var x=0;
+            var y=1;
+            var z;
+            console.log(x);
+            console.log(y);
+            for(var i=0; i<a; i++){ 
+                z=x+y;
+                x=y;
+                y=z; 
+                console.log(z);
+            }
+        } 
+        function primeFactor1(n){    // function for hcf for taking only primeFactors
+       // var num=parseInt(prompt("enter the number"));
+        function prime(num1) {
+            for (let i = 2; i <= Math.sqrt(num1); i++)
+            {
+            if (num1 % i === 0) return false;
+            }
+            return true;
+        }
+        const result = [];
+        for (let i = 2; i <= n; i++)
+        {
+            while (prime(i) && n % i === 0) 
+            {
+            if (!result.includes(i)) result.push(i);
+            n /= i;
+            }
+        }
+        return result;
+        }
+        function HCF(){
+            var n1 = prompt("enter 1st no.: ");
+            var n2 = prompt("enter 2nd no.: ");
+            var arr1 = primeFactor1(n1);
+            var arr2 = primeFactor1(n2);
+            var arr3 = [];
+            console.log("array1: "+ arr1);
+            console.log("array2: "+ arr2);
+            for(var i=0; i<arr1.length; i++){
+                for(var j=0; j<arr2.length; j++){
+                    if(arr1[i]==arr2[j]){
+                        arr3.push(arr2[j]);
+                    }
+                }
+            }
+            console.log("common elements: "+ arr3);
+            var Hcf = 1;
+            for(var i=0; i<arr3.length; i++){
+                Hcf = Hcf*arr3[i];
+            }
+            console.log("HCF of "+n1+" & "+n2+" is "+ Hcf);       
+        }
+        function primeFactor(){ 
+        var num=parseInt(prompt("enter the number"));
+        function prime(num1) {
+            for (let i = 2; i <= Math.sqrt(num1); i++)
+            {
+            if (num1 % i === 0) return false;
+            }
+            return true;
+        }
+        const result = [];
+        for (let i = 2; i <= num; i++)
+        {
+            while (prime(i) && num % i === 0) 
+            {
+            if (!result.includes(i)) result.push(i);
+            num /= i;
+            }
+        }
+        return result;
+        }
+
+         
+        function palindrome(){
+            /*
+            var p = prompt("enter your string: ");
+            let i=0;
+            let j = p.length-1;
+            while(i<j){
+                if(p[i]==p[j]){
+                    i++;
+                    j--;
+                }
+                else{
+                    return false;
+                }
+            }
+            return true;
+            */
+           var p = prompt("enter your string: ");
+           const b = p.split('').reverse().join('');
+           return p===b;
+
+        }
+        function multiplicationTable(){
+            var no = prompt("which no. table do you want? ");
+            var tb = prompt("upto which no. u want the table of: ");
+            for(var j=no; j<=tb; j++){
+                console.log("multiplication table of "+j);
+                for(var i=1; i<=10; i++){
+                    console.log(j+"x"+i+" = "+j*i);
+                }  
+            }
+            
+        }
+     /*   var op= prompt("Enter which programme do you want to run?\n" + "fb=Fibonacci Series,\npf=Prime Factor,\nmt=Multiplication Table,\npd=Palindrome,\nhcf=HCF");
+        if(op=="fb"){  fibonacciSeries(); }
+            else if(op=="pf"){ console.log(primeFactor()); }
+            else if(op=="mt"){ multiplicationTable();}
+            else if(op=="pd"){ console.log(palindrome());}
+            else if(op=="hcf"){ HCF();}
+        */
+
+
+        // to empty an array
+        var a=[5,10,15,20];
+
+      /*  // first method
+        a=[];
+        console.log(a);
+        */
+
+       /* // second mehod
+        a.length=0;
+        console.log(a);
+        */
+        // third method
+        a.splice(0,a.length);
+        console.log(a);
+
+        var v= 10;
+        console.log(typeof(v));
+        
+        a.push(30);
+        console.log(a);
+
+        a[a.length]=35;
+        console.log(a);
+
+       console.log(a.indexOf(35));
+
+/*
+       // to find an element in array
+       a.push(20);
+       a.push(10);
+       a.push(25);
+       a.push(40);
+       a.push(2);
+       var o = 25;
+       for(var i=0; i<a.length; i++){
+        if(a[i]!=o){
+            continue;
+        }
+        else{
+            console.log(o + " is present at index "+ a.indexOf(o));   
+        }
+       }
+
+       var s = ['d','r','t','o','m','a'];
+       console.log(s.sort());
+
+        var a1= [, , ,]      // 3 values
+        var a2= new Array(3)   // 3 values
+        var a3= [  [11,22,33],[44,55,66]  ];  // 2 values
+        
+        console.log(a1.length);
+        console.log(a2.length);
+        console.log(a3.length);
+        console.log(a3[0].length);
+
+       var u = [];
+       u.unshift(1);  // it adds 1 to the front
+       console.log(u); // unshift() adds element to the 1st place only
+       u.unshift(22);
+       console.log(u);
+       u.shift(); // ans. 1
+       u.unshift(33,[44,55]);  //ans. 33,44,55,1 
+       u.shift();
+       console.log(u);
+       u.shift();  // ans. 1
+*/
+      /* var ar = [5,6,7,8,9,10];
+       var sum=0;*/
+       /*    first method to add all elements in array
+       for(var i=0; i<a.length; i++){
+        sum+=a[i];
+       }
+       console.log( "sum is : "+sum); 
+       */
+      // 2nd method to add all elements in array
+     /* sum=ar.reduce((a,b) => { return a+b ;});
+      console.log(sum);*/
+
+
+        //  first method
+    /*  var string="programming";
+      var j;
+      var i;
+      var count=1;
+      var str=string.split('');
+      for(i=0; i<str.length; i++){
+        for(j=i+1; j<str.length; j++){
+            if(str[i] == str[j] && str[i] != ' ') 
+                {  
+                    count++;  
+                    //Set string[j] to 0 to avoid printing visited character  
+                    str[j] = '0';  
+                }            
+        }
+        if(count>1 && str[i]!='0'){
+            console.log(str[i]);
+        }
+       
+    }
+*/
+    //console.log(str);
+
+    
+        // 2nd method
+    
+       /* var a1=[32,55,45,25,32];
+            const a2=a1.map(duplicate);
+            function duplicate(n){
+                return 2*n;
+            }
+            console.log(a2);
+
+            const a3=a1.map(Math.sqrt);
+            console.log(a3);
+        */
+            //q1. how to reverse a string
+            //q2. how to capatalize first letter of the string
+            //q3. write a function which take two strings and gives initial letter of those strings.
+            //q4. to insert a string within a string at particular position
+            //q5. remove the first occurance of word in a string.
+            //What happens if you use let a second time with the same variable name? What if you use var instead?
+
+            var h = "hello world";
+            console.log(h.replace("hello","hii"));
+            
+
+    </script>
+</body>
+</html>
