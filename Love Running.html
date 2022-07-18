@@ -23,17 +23,20 @@
         }
         .nav{
             display: flex;
-            flex-direction: row;
+            
             justify-content: flex-end;
             padding: 2px;
             margin-right: 2rem;
+            text-decoration-line: none;
+            
         }
         .image{
-           /* background-image: url('running-image.png'); */
+            background-image: url(running-image.png); 
             position: relative;
             top: 80px;
             width: 100%;
             height: 600px;
+            
         }
         .overlay{
             position: absolute;
@@ -62,6 +65,9 @@
         #down{
             justify-content: center;
         }
+        .text-center{
+            margin-top: 80px;
+        }
         .lower{
             width: 100%;
         }
@@ -76,6 +82,7 @@
             text-align: center;
             justify-content: center;
             border-bottom: 2px solid gray;
+            margin-top: 20px;
         }
         .center{
             width: 33%;
@@ -92,6 +99,7 @@
             text-align: center;
             justify-content: center;
             border-bottom: 2px solid gray;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -101,15 +109,15 @@
             <nav class="navbar">
                 <h1>LOVE RUNNING</h1>
                 <ul class="nav">
-                    <li><a href="welcome.html">About</a></li>
-                    <li><a href="work.html">Work</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <span><a href="welcome.html">About</a></span>
+                    <span><a href="work.html">Work</a></span>
+                    <span><a href="contact.html">Contact</a></span>
                 </ul>
              </nav>
         </div>
     </header>
     <div class="image">
-       <img src="running-image.png">
+       <!--<img src="running-image.png">-->
     </div>
     <div class="overlay">
         <h1>Love Running</h1>
